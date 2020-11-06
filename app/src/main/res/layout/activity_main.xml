@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -18,9 +19,9 @@
             android:layout_height="50dp"
             android:layout_marginEnd="20dp"
             android:gravity="end|center_vertical"
-            android:text="86+77"
             android:textColor="#464646"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            tools:text="86+77" />
 
         <TextView
             android:id="@+id/tempResultTv"
@@ -28,9 +29,9 @@
             android:layout_height="50dp"
             android:layout_marginEnd="20dp"
             android:gravity="end|center_vertical"
-            android:text="163"
             android:textColor="#A1A1A1"
-            android:textSize="25sp" />
+            android:textSize="25sp"
+            tools:text="163" />
     </LinearLayout>
 
     <GridLayout
