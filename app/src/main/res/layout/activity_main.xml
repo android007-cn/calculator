@@ -1,112 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#D7D7D7"
-    android:columnCount="4"
-    android:orientation="horizontal"
-    android:rowCount="5">
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_height="50dp"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="#F5F5F5"
-        android:gravity="center"
-        android:text="C"
-        android:textColor="#0F7FF5"
-        android:textSize="30sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
 
-    <TextView
-        android:layout_height="50dp"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="#F5F5F5"
-        android:gravity="center"
-        android:text="÷"
-        android:textColor="#0F7FF5"
-        android:textSize="30sp" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#D7D7D7"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="5">
 
-    <TextView
-        android:layout_height="50dp"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="#F5F5F5"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:text="×"
-        android:textColor="#0F7FF5" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="#0F7FF5"
+            android:textSize="25sp" />
 
-    <TextView
-        android:layout_height="50dp"
-        android:layout_gravity="fill"
-        android:layout_margin="1dp"
-        android:background="#F5F5F5"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:text="《-"
-        android:textColor="#0F7FF5" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="÷"
+            android:textColor="#0F7FF5"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="7" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="×"
+            android:textColor="#0F7FF5"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="8" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="《-"
+            android:textColor="#0F7FF5"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="9" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="7"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="-" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="8"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="4" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="5" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="-"
+            android:textColor="#0F7FF5"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="6" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="4"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="+" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="5"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="1" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="6"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="2" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="+"
+            android:textColor="#0F7FF5"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="3" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_rowSpan="2"
-        android:layout_gravity="fill"
-        android:text="=" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="2"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="%" />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="3"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="0" />
+        <TextView
+            android:layout_height="70dp"
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#0F7FF5"
+            android:gravity="center"
+            android:text="="
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="." />
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="%"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#464646"
+            android:textSize="25sp" />
 
-</GridLayout>
+        <Button
+            android:layout_height="70dp"
+            android:layout_gravity="fill"
+            android:layout_margin="1px"
+            android:background="#F5F5F5"
+            android:gravity="center"
+            android:text="."
+            android:textColor="#464646"
+            android:textSize="25sp" />
+
+    </GridLayout>
+</RelativeLayout>
