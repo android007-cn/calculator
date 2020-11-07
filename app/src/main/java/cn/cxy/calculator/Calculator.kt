@@ -9,9 +9,10 @@ class Calculator(private val resultCallback: ResultCallback) {
         when (input) {
             KEY_CLEAR -> clear()
             KEY_DEL -> deleteLastInput()
-            KEY_ADD, KEY_SUB, KEY_MULTIPLY, KEY_DIV -> doOps(input)
+            KEY_ADD, KEY_SUB, KEY_MULTIPLY, KEY_DIV -> checkInputOp(input)
+            KEY_DOT -> checkInputDot(input)
             KEY_GET_RESULT -> result = getResult()
-            else -> append(input)
+            else -> checkInputNum(input)
         }
         if (result.isNotEmpty()) {
             inputStringBuffer.replace(0, inputStringBuffer.length, result)
@@ -21,6 +22,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         resultCallback.updateResult(inputStringBuffer.toString())
         resultCallback.updateTempResult(tempResult)
     }
+
 
     private fun getResult(): String {
         val inputString = inputStringBuffer.toString()
@@ -105,9 +107,34 @@ class Calculator(private val resultCallback: ResultCallback) {
         return list
     }
 
-    private fun doOps(input: String) {
+    /**
+     * 检测输入"."是否合法
+     * 前一个输入必须为数字，并且最后一个数中不能已经包含"."
+     */
+    private fun checkInputDot(input: String) {
+        val lastInput = getLastInput()
+        if (isDigit(lastInput)
+            && !getLastElementExceptOp(inputStringBuffer.toString()).contains(KEY_DOT)
+        ) {
+            append(input)
+        }
+    }
+
+    /**
+     * 检测输入操作符"加减乘除"是否合法
+     */
+    private fun checkInputOp(input: String) {
         val lastInput = getLastInput()
         if (isDigit(lastInput)) {
+            append(input)
+        }
+    }
+
+    private fun checkInputNum(input: String) {
+        val lastElementExceptOp = getLastElementExceptOp(inputStringBuffer.toString())
+        if (lastElementExceptOp.isEmpty()) {
+            append(input)
+        } else if (lastElementExceptOp.toDouble() != 0.0 || lastElementExceptOp.contains(KEY_DOT) || input != KEY_ZERO) {
             append(input)
         }
     }
