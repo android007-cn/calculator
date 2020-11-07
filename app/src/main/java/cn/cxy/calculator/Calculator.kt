@@ -96,7 +96,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         var list = mutableListOf<String>()
         var startIndex = 0
         for (index in inputString.indices) {
-            if (!isDigit(inputString.elementAt(index).toString())) {
+            if (!isDigitOrDot(inputString.elementAt(index).toString())) {
                 list.add(inputString.substring(startIndex, index))
                 list.add(inputString.elementAt(index).toString())
                 startIndex = index + 1
@@ -162,6 +162,7 @@ class Calculator(private val resultCallback: ResultCallback) {
     }
 
     private fun isDigit(input: String) = input in KEY_ZERO..KEY_NINE
+    private fun isDigitOrDot(input: String) = input in KEY_ZERO..KEY_NINE || input == KEY_DOT
     private fun isNoneZeroDigit(input: String) = input in KEY_ONE..KEY_NINE
     private fun isOp(input: String) =
         input == KEY_ADD || input == KEY_SUB || input == KEY_MULTIPLY || input == KEY_DIV
