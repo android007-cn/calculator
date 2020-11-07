@@ -23,7 +23,6 @@ class Calculator(private val resultCallback: ResultCallback) {
         resultCallback.updateTempResult(tempResult)
     }
 
-
     private fun getResult(): String {
         val inputString = inputStringBuffer.toString()
         if (inputString.isEmpty()) {
@@ -139,14 +138,6 @@ class Calculator(private val resultCallback: ResultCallback) {
         }
     }
 
-    private fun append(input: String) {
-        inputStringBuffer.append(input)
-    }
-
-    private fun clear() {
-        inputStringBuffer.delete(0, inputStringBuffer.count())
-    }
-
     private fun getLastInput(): String {
         var result = ""
         if (inputStringBuffer.count() > 0) {
@@ -161,9 +152,10 @@ class Calculator(private val resultCallback: ResultCallback) {
         }
     }
 
+    private fun append(input: String) = inputStringBuffer.append(input)
+    private fun clear() = inputStringBuffer.delete(0, inputStringBuffer.count())
     private fun isDigit(input: String) = input in KEY_ZERO..KEY_NINE
     private fun isDigitOrDot(input: String) = input in KEY_ZERO..KEY_NINE || input == KEY_DOT
-    private fun isNoneZeroDigit(input: String) = input in KEY_ONE..KEY_NINE
     private fun isOp(input: String) =
         input == KEY_ADD || input == KEY_SUB || input == KEY_MULTIPLY || input == KEY_DIV
 }

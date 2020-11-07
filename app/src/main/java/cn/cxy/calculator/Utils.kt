@@ -27,13 +27,3 @@ fun getLastElementExceptOp(input: String): String {
     val result = input.split(regex)
     return result.last()
 }
-
-fun isNum(input: String): Boolean {
-    var result = true
-    try {
-        input.toDouble()
-    } catch (e: Exception) {
-        result = false
-    }
-    return result
-}
