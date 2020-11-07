@@ -1,8 +1,8 @@
 package cn.cxy.calculator
 
 const val KEY_CLEAR="C"
-const val KEY_DIV="/"
-const val KEY_MULTIPLY="*"
+const val KEY_DIV="÷"
+const val KEY_MULTIPLY="×"
 const val KEY_DEL="D"
 const val KEY_SEVEN="7"
 const val KEY_EIGHT="8"
