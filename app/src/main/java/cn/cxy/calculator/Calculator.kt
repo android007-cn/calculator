@@ -2,7 +2,9 @@ package cn.cxy.calculator
 
 class Calculator(private val resultCallback: ResultCallback) {
     var inputStringBuffer = StringBuffer()
+
     fun accept(input: String) {
+        var tempResult = ""
         var result = ""
         when (input) {
             KEY_CLEAR -> clear()
@@ -11,8 +13,13 @@ class Calculator(private val resultCallback: ResultCallback) {
             KEY_GET_RESULT -> result = getResult()
             else -> append(input)
         }
+        if (result.isNotEmpty()) {
+            inputStringBuffer.replace(0, inputStringBuffer.length, result)
+        } else {
+            tempResult = getResult()
+        }
         resultCallback.updateResult(inputStringBuffer.toString())
-        resultCallback.updateTempResult(result)
+        resultCallback.updateTempResult(tempResult)
     }
 
     private fun getResult(): String {
@@ -21,6 +28,10 @@ class Calculator(private val resultCallback: ResultCallback) {
             return ""
         }
         var numOrOpList = spitIntoList(inputString)
+        //为便于后续计算，如果最后一个元素是操作符，则删除掉。
+        if (isOp(numOrOpList.last())) {
+            numOrOpList.remove(numOrOpList.last())
+        }
         return calculate(numOrOpList).toString()
     }
 
