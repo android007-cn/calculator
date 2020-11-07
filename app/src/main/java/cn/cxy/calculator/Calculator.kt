@@ -35,16 +35,16 @@ class Calculator(private val resultCallback: ResultCallback) {
         return calculate(numOrOpList).toString()
     }
 
-    private fun calculate(numOrOpList: MutableList<String>): Long {
+    private fun calculate(numOrOpList: MutableList<String>): Double {
         if (numOrOpList.size == 1) {
-            return numOrOpList[0].toLong()
+            return numOrOpList[0].toDouble()
         }
         var opIndex = -1
         opIndex = numOrOpList.indexOf(KEY_MULTIPLY)
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toLong() * nextNum.toLong()
+            val result = lastNum.toDouble() * nextNum.toDouble()
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
@@ -53,7 +53,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toLong() / nextNum.toLong()
+            val result = lastNum.toDouble() / nextNum.toDouble()
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
@@ -62,7 +62,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toLong() + nextNum.toLong()
+            val result = lastNum.toDouble() + nextNum.toDouble()
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
@@ -71,12 +71,12 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toLong() - nextNum.toLong()
+            val result = lastNum.toDouble() - nextNum.toDouble()
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
 
-        return 0
+        return 0.0
     }
 
 
