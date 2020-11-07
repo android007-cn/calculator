@@ -222,13 +222,11 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/percentBtn"
             android:layout_height="70dp"
             android:layout_gravity="fill"
             android:layout_margin="1px"
             android:background="#F5F5F5"
             android:gravity="center"
-            android:text="%"
             android:textColor="#464646"
             android:textSize="25sp" />
 

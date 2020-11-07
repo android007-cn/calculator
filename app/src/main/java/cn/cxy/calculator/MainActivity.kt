@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ResultCallback {
         twoBtn.setOnClickListener(this)
         threeBtn.setOnClickListener(this)
         getResultTv.setOnClickListener(this)
-        percentBtn.setOnClickListener(this)
         zeroBtn.setOnClickListener(this)
         dotBtn.setOnClickListener(this)
     }
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ResultCallback {
             R.id.twoBtn -> calculator.accept(KEY_TWO)
             R.id.threeBtn -> calculator.accept(KEY_THREE)
             R.id.getResultTv -> calculator.accept(KEY_GET_RESULT)
-            R.id.percentBtn -> calculator.accept(KEY_PERCENT)
             R.id.zeroBtn -> calculator.accept(KEY_ZERO)
             R.id.dotBtn -> calculator.accept(KEY_DOT)
         }

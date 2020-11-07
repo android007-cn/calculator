@@ -107,7 +107,7 @@ class Calculator(private val resultCallback: ResultCallback) {
 
     private fun doOps(input: String) {
         val lastInput = getLastInput()
-        if (isDigit(lastInput) || lastInput == KEY_PERCENT) {
+        if (isDigit(lastInput)) {
             append(input)
         }
     }
