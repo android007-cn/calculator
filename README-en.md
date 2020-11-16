@@ -1,17 +1,25 @@
-# 简介
-一个简单的计算器.
-# 主要特性
-1. 支持加减乘除
-2. 支持删除前一输入及彻底清除。
-# 效果图
+# Introduction
+A simple calculator
+# Features
+1. Support add,subtract,multiply,divide
+2. Support clear
+# Screenshot
 ![](https://upload-images.jianshu.io/upload_images/6169789-c0a08814d86a9800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
+# Key Points
+1. GridLayout
+2. split on strings
+3. recursion
+# License
+Copyright 2020 android007-cn
 
-# 技术点
-1. GridLayout:实现网格排版
-2. 字符串分割处理
-3. 递归调用
-# 代码目录截图
-![](https://upload-images.jianshu.io/upload_images/6169789-865ab74adf206fcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/800)
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-# 完整源代码
-https://gitee.com/cxyzy1/simple-calculator
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
