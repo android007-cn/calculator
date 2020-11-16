@@ -1,5 +1,8 @@
 package cn.cxy.calculator
 
+import java.math.BigDecimal
+
+@ExperimentalStdlibApi
 class Calculator(private val resultCallback: ResultCallback) {
     var inputStringBuffer = StringBuffer()
 
@@ -31,9 +34,22 @@ class Calculator(private val resultCallback: ResultCallback) {
         var numOrOpList = spitIntoList(inputString)
         //为便于后续计算，如果最后一个元素是操作符，则删除掉。
         if (isOp(numOrOpList.last())) {
-            numOrOpList.remove(numOrOpList.last())
+            numOrOpList.removeLast()
         }
-        return calculate(numOrOpList).toString()
+        var result = calculate(numOrOpList).toString()
+        result = formatResult(result)
+        return result
+    }
+
+    /**
+     * 如果以".0"结尾，则直接去掉。
+     */
+    private fun formatResult(_result: String): String {
+        var result = _result
+        if (result.endsWith(".0")) {
+            result = result.substringBefore(".0")
+        }
+        return result
     }
 
     private fun calculate(numOrOpList: MutableList<String>): Double {
@@ -45,7 +61,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toDouble() * nextNum.toDouble()
+            val result = lastNum.toBigDecimal().multiply(nextNum.toBigDecimal())
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
@@ -54,7 +70,8 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toDouble() / nextNum.toDouble()
+            val result = lastNum.toBigDecimal()
+                .divide(nextNum.toBigDecimal(), CALC_SCALE, BigDecimal.ROUND_HALF_EVEN)
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
@@ -63,7 +80,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toDouble() + nextNum.toDouble()
+            val result = lastNum.toBigDecimal().add(nextNum.toBigDecimal())
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }
@@ -72,7 +89,7 @@ class Calculator(private val resultCallback: ResultCallback) {
         if (opIndex != -1) {
             val lastNum = numOrOpList[opIndex - 1]
             val nextNum = numOrOpList[opIndex + 1]
-            val result = lastNum.toDouble() - nextNum.toDouble()
+            val result = lastNum.toBigDecimal().subtract(nextNum.toBigDecimal())
             val newList = replaceThreeElementsByOne(numOrOpList, opIndex, result.toString())
             return calculate(newList)
         }

@@ -23,7 +23,7 @@ fun replaceThreeElementsByOne(
  * 如字符串为：123+45*67，那返回67
  */
 fun getLastElementExceptOp(input: String): String {
-    val regex = Regex("[$KEY_ADD|$KEY_SUB|$KEY_MULTIPLY|$KEY_DIV]")
+    val regex = Regex("[$KEY_ADD|\\$KEY_SUB|$KEY_MULTIPLY|$KEY_DIV]")
     val result = input.split(regex)
     return result.last()
 }

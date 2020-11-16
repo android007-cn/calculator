@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+@ExperimentalStdlibApi
 class MainActivity : AppCompatActivity(), View.OnClickListener, ResultCallback {
     lateinit var calculator: Calculator
     override fun onCreate(savedInstanceState: Bundle?) {

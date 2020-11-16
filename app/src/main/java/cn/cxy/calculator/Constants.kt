@@ -18,3 +18,6 @@ const val KEY_THREE="3"
 const val KEY_GET_RESULT="="
 const val KEY_ZERO="0"
 const val KEY_DOT="."
+
+//小数点后保留位数
+const val CALC_SCALE=10
