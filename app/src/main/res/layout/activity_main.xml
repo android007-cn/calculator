@@ -64,7 +64,7 @@
             android:gravity="center"
             android:text="÷"
             android:textColor="#0F7FF5"
-            android:textSize="25sp" />
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/multiplyBtn"
@@ -75,18 +75,17 @@
             android:gravity="center"
             android:text="×"
             android:textColor="#0F7FF5"
-            android:textSize="25sp" />
+            android:textSize="35sp" />
 
-        <Button
+        <ImageView
             android:id="@+id/delBtn"
             android:layout_height="70dp"
             android:layout_gravity="fill"
             android:layout_margin="1px"
             android:background="#F5F5F5"
             android:gravity="center"
-            android:text="《-"
-            android:textColor="#0F7FF5"
-            android:textSize="25sp" />
+            android:padding="20dp"
+            android:src="@drawable/ic__del" />
 
         <Button
             android:id="@+id/sevenBtn"
@@ -130,7 +129,7 @@
             android:gravity="center"
             android:text="-"
             android:textColor="#0F7FF5"
-            android:textSize="25sp" />
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/fourBtn"
@@ -174,7 +173,7 @@
             android:gravity="center"
             android:text="+"
             android:textColor="#0F7FF5"
-            android:textSize="25sp" />
+            android:textSize="35sp" />
 
         <Button
             android:id="@+id/oneBtn"
@@ -219,7 +218,7 @@
             android:gravity="center"
             android:text="="
             android:textColor="#ffffff"
-            android:textSize="25sp" />
+            android:textSize="35sp" />
 
         <Button
             android:layout_height="70dp"
