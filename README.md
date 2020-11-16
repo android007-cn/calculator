@@ -2,6 +2,7 @@
 一个简单的计算器.
 # 主要特性
 1. 支持加减乘除
+2. 支持删除前一输入，彻底清除。
 # 效果图
 ![](https://upload-images.jianshu.io/upload_images/6169789-92f41919338116f9.gif?imageMogr2/auto-orient/strip)
 # 技术点
